@@ -1,0 +1,374 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: lightseagreen;
+    color: white;
+}
+
+:root { 
+    --ff-primary: 'Space Grotesk'; 
+    --input-backgeound: rgba(119, 136, 153, 0.15);
+    --input-shadow: rgba(119, 136, 153, 0.35);
+}
+
+body {
+    font-family: var(--ff-primary);
+    background-color: lightseagreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 450px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    overflow: hidden;
+}
+
+.container .title {
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+.container .controller {
+    width: 100%;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.controller .from, .to {
+    background-color: var(--input-backgeound);
+    box-shadow: inset 0 0 3px var(--input-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.from .select-box, .to .select-box {
+    padding-inline: 15px;
+    padding-block: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.from .select-box .img-cover,  .to .select-box .img-cover {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.img-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.select-box .code {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.code .code-name {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.code i { font-weight: 500; font-size: 20px; }
+
+.input-field input {
+    padding-inline-end: 15px;
+}
+
+.input-field input {
+    width: 250px;
+    font-family: var(--ff-primary);
+    height: 50px;
+    text-align: right;
+    background-color: transparent;
+    font-size: 28px;
+    border: none;
+    outline: none;
+    padding-inline-start: 10px;
+}
+
+.controller .icon {
+    background-color: lightseagreen;
+    margin-top: -10px;
+    margin-bottom: -7px;
+    z-index: 11;
+    display: grid;
+    place-content: center;
+    margin-inline: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    transition: .3s;
+    color: white;
+}
+
+.icon:hover {
+    rotate: 180deg;
+    background-color: lightseagreen;
+
+}
+
+.container .exchange-rate {
+    margin-block-start: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.exchange-rate p {
+    text-align: center;
+    color: lightseagreen;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.exchange-rate .exchange-text {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.exchange-rate .btn {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: lightseagreen;
+    color: white;
+    height: 45px;
+    font-size: 17px;
+    border-radius: 10px;
+    font-family: var(--ff-primary);
+    cursor: pointer;
+}
+
+.container .drawer {
+    width: 100%;
+    position: absolute;
+    inset: 0;
+    background-color: white;
+    padding: 20px;
+    display: grid;
+    align-content: start;
+    gap: 20px;
+    transform: translateY(100%);
+    transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.container .drawer.show {
+    transform: none;
+}
+
+.drawer .drawer-header {
+    display: flex;
+    align-items: center;
+    gap: 110px;
+}
+
+.drawer-header i {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.drawer-header i:hover {
+    background-color: rgba(214, 214, 214, 0.35);
+}
+
+.drawer-header p {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.drawer .search-field {
+    margin-top: -10px;
+    width: 100%;
+}
+
+.search-field input {
+    width: 100%;
+    height: 45px;
+    padding-inline-start: 15px;
+    padding-inline-end: 15px;
+    font-family: var(--ff-primary);
+    font-size: 16px;
+    border: 2px solid #d9d9d9;
+    outline: none;
+    border-radius: 7px;
+}
+
+.search-field input:focus {
+    border: 2px solid lightseagreen;
+    caret-color: lightseagreen;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    display: none;
+}
+
+.country-list {
+    list-style-type: none;
+    overflow-y: auto;
+}
+
+.country-list::-webkit-scrollbar { width: 6px; }
+.country-list::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+    border-radius: 6px;
+}
+
+.country-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding-block: 5px;
+}
+
+.country-list li img { 
+    border-radius: 5px; 
+    width: 55px;
+    height: 45px;
+}
+
+.country-list li:first-child { padding-block-start: 0; }
+
+.country-list *:not(li) { pointer-events: none; }
+
+
+
+@media (max-width: 440px) {
+    
+    body { padding: 20px; }
+
+    .input-field input {
+        margin-left: -15px;
+        width: 150px;
+        font-size: 17px;
+    }
+
+    body { padding: 20px; }
+
+    .drawer-header {
+        display: flex;
+        align-items: center;
+    }
+
+    .drawer-header p {
+        margin-left: -100px;
+    }
+
+    .container .title { font-size: 20px; }
+
+    .from .select-box .img-cover,  .to .select-box .img-cover {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+    
+    .img-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .select-box .code {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .code .code-name {
+        font-weight: 500;
+        font-size: 16px;
+    }
+    
+    .code i { font-weight: 500; font-size: 16px; }
+
+    .exchange-rate .exchange-text {
+        font-size: 15px;
+    }
+
+
+}
+
+@media (max-width: 350px) {
+    
+    body { padding: 20px; }
+
+    .drawer-header {
+        display: flex;
+        align-items: center;
+    }
+
+    .drawer-header p {
+        margin-left: -100px;
+    }
+
+    .container .title { font-size: 20px; }
+
+    .input-field input {
+        margin-left: -100px;
+        width: 130px;
+        font-size: 17px;
+    }
+
+    .from .select-box .img-cover,  .to .select-box .img-cover {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+    
+    .img-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .select-box .code {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .code .code-name {
+        font-weight: 500;
+        font-size: 16px;
+    }
+    
+    .code i { font-weight: 500; font-size: 16px; }
+
+    .exchange-rate .exchange-text {
+        font-size: 15px;
+    }
+
+}

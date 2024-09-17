@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/svg+xml">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+    <!-- Google font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+
+    <div class="container">
+        <h1 class="title">Currency Converter</h1>
+
+
+        <div class="controller">
+            
+            <div class="from">
+
+                <div class="select-box">
+                    <div class="img-cover">
+                        <img src="https://flagcdn.com/w320/us.png" alt="India Flag" width="128" style="border-radius: 50%;">
+                    </div>
+
+                    <div class="code">
+                        <div class="code-name">USD</div>
+                        <i class="ri-arrow-down-s-line"></i>
+                    </div>
+                </div>
+
+                <div class="input-field">
+                    <input type="number" class="from-input" value="1">
+                </div>
+
+            </div>
+
+            <div class="icon">
+                <i class="ri-arrow-up-down-line"></i>
+            </div>
+
+            <div class="to">
+
+                <div class="select-box">
+                    <div class="img-cover">
+                        <img src="https://flagcdn.com/w320/pk.png" alt="India Flag" width="128" style="border-radius: 50%;">
+                    </div>
+
+                    <div class="code">
+                        <div class="code-name">PKR</div>
+                        <i class="ri-arrow-down-s-line"></i>
+                    </div>
+                </div>
+
+                <div class="input-field">
+                    <input type="text" class="to-input" readonly>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="exchange-rate">
+            <div class="exchange-text">1 USD = 178.98 PKR</div>
+            <button class="btn" id="exchange-rate">Exchange Rate</button>
+        </div>
+
+
+
+        <!-- drawer -->
+
+        <div class="drawer">
+
+            <div class="drawer-header">
+                <i class="ri-arrow-left-line" data-drawer-toggler></i>
+                <p>Select Country</p>
+            </div>
+
+            <div class="search-field">
+                <input type="search" placeholder="Search country" data-filter-input>
+            </div>
+
+            <div class="country-list">
+                <li data-drawer-toggler>
+                    <img src="https://placehold.co/48">
+                    <div>
+                        <h4>USD</h4>
+                        <p>US Dollar</p>
+                    </div>
+                </li>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/country.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
